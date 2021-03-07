@@ -6,4 +6,4 @@ var articleSchema = new Schema({
   descriptions: String,
 });
 
-module.exports(mongoose.model('Article', articleSchema));
+module.exports = mongoose.model('Article', articleSchema);
