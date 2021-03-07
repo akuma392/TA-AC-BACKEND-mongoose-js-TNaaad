@@ -52,6 +52,16 @@ app.put('/users/:id', (req, res) => {
   );
 });
 
+app.put('/users', (req, res) => {
+  User.findOneAndUpdate(
+    { name: 'Altcampus' },
+    req.body,
+    { new: true },
+    (err, user) => {
+      res.json(user);
+    }
+  );
+});
 app.delete('/users/:id', (req, res) => {
   User.findByIdAndDelete(req.params.id, (err, user) => {
     res.send(`${user.name} was deleted`);
